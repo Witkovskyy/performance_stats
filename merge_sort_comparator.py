@@ -4,22 +4,21 @@ from generate_data import generate_random, generate_ascending, generate_descendi
 
 
 def merge_sort_main(A):
-    B = [0] * len(A)  # Tworzymy pomocniczą tablicę
-    merge_sort(A, 0, len(A) - 1, B)  # Wywołujemy rekurencyjnie Merge Sort
+    B = [0] * len(A)  
+    merge_sort(A, 0, len(A) - 1, B)
     return A
 
 def merge_sort(A, l, r, B):
     if l < r:
-        m = (l + r) // 2  # Znajdujemy środek listy
-        merge_sort(A, l, m, B)  # Sortujemy lewą połowę
-        merge_sort(A, m + 1, r, B)  # Sortujemy prawą połowę
-        merge(A, l, m, r, B)  # Scalanie posortowanych części
+        m = (l + r) // 2 
+        merge_sort(A, l, m, B)  
+        merge_sort(A, m + 1, r, B)
+        merge(A, l, m, r, B)  
 
 def merge(A, l, m, r, B):
-    i = l  # Początek lewej połowy
-    j = m + 1  # Początek prawej połowy
+    i = l  
+    j = m + 1  
 
-    # Łączymy dwie części
     for k in range(l, r + 1):
         if (i <= m and (j > r or A[i] <= A[j])):
             B[k] = A[i]
@@ -28,7 +27,6 @@ def merge(A, l, m, r, B):
             B[k] = A[j]
             j += 1
 
-    # Przepisujemy posortowane elementy do oryginalnej tablicy
     for k in range(l, r + 1):
         A[k] = B[k]
 

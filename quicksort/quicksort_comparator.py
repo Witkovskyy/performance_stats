@@ -49,7 +49,7 @@ with open("quick.txt", "w",encoding="utf-8") as f:
     f.write("\n")
     f.close()
 
-for i in range(100,25000,1000):
+for i in range(100,250000,5000):
     n = i
     pivot_picker = 0
     data = generate_A(n)
