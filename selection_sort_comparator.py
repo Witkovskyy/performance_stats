@@ -2,6 +2,10 @@ import time
 from generate_data import generate_random, generate_ascending, generate_descending, generate_V
 
 
+#Data range
+starting_num = 100
+finish_num = 7000
+step = 200
 
 def selection_sort(A):
     n = len(A)
@@ -21,7 +25,7 @@ with open("selection.txt", "w",encoding="utf-8") as f:
 
 # n = int(input("Podaj liczbe elementow"))
 
-for i in range(400,7000,100):
+for i in range(starting_num, finish_num, step):
     n = i
 
     times_random = []

@@ -3,6 +3,11 @@ from generate_data import generate_random, generate_ascending, generate_descendi
 
 
 
+#Data range
+starting_num = 1000
+finish_num = 25000
+step = 5000
+
 def heapify(A, i, heapsize):
     l = 2 * i
     r = 2 * i + 1  
@@ -43,7 +48,7 @@ with open("heap.txt", "w",encoding="utf-8") as f:
     f.write("\n")
     f.close()
 
-for i in range(1000,210000, 10000):
+for i in range(starting_num, finish_num, step):
     n = i
 
 

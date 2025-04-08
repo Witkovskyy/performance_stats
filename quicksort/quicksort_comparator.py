@@ -5,6 +5,11 @@ import sys
 
 sys.setrecursionlimit(10000)
 
+#Data range
+starting_num = 1000
+finish_num = 25000
+step = 5000
+
 def quicksort_main(A, pivot_picker):
     quicksort(A, 0, len(A) - 1, pivot_picker)  
     return A
@@ -18,11 +23,11 @@ def quicksort(A, p, r, pivot_picker):
 def partition(A, p, r, pivot_picker):
     match pivot_picker:
         case 0:
-            x = A[r] # Pivot - prawy
+            x = A[r] # Pivot - max right
         case 1:
-            x = A[(p + r) // 2]  # Pivot – środkowy
+            x = A[(p + r) // 2]  # Pivot – middle
         case 2:
-            x = A[random.randint(p, r)]
+            x = A[random.randint(p, r)] #Pivot - random
 
     i = p - 1
     j = r + 1
@@ -49,7 +54,7 @@ with open("quick.txt", "w",encoding="utf-8") as f:
     f.write("\n")
     f.close()
 
-for i in range(100,250000,5000):
+for i in range(starting_num, finish_num, step):
     n = i
     pivot_picker = 0
     data = generate_A(n)

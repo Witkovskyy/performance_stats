@@ -3,6 +3,12 @@ from generate_data import generate_random, generate_ascending, generate_descendi
 
 
 
+#Data range
+starting_num = 1000
+finish_num = 25000
+step = 5000
+
+
 def merge_sort_main(A):
     B = [0] * len(A)  
     merge_sort(A, 0, len(A) - 1, B)
@@ -39,7 +45,7 @@ with open("merge.txt", "w",encoding="utf-8") as f:
     f.close()
 
 
-for i in range(1000,99000,3000):
+for i in range(starting_num, finish_num, step):
     n = i
 
     times_random = []
