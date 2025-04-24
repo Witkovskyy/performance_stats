@@ -4,8 +4,8 @@ from generate_data import generate_random, generate_ascending, generate_descendi
 
 
 #Data range
-starting_num = 1000
-finish_num = 25000
+starting_num = 5000
+finish_num = 50000
 step = 5000
 
 

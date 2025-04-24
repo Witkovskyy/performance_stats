@@ -7,7 +7,7 @@ sys.setrecursionlimit(10000)
 
 #Data range
 starting_num = 1000
-finish_num = 25000
+finish_num = 50000
 step = 5000
 
 def quicksort_main(A, pivot_picker):
